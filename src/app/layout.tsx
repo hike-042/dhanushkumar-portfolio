@@ -1,4 +1,5 @@
 import "./globals.css";
+import "./device-optimization.css";
 import Script from "next/script";
 import CursorGlow from "@/components/ui/cursor-glow";
 import SmoothScroll from "@/components/ui/smooth-scroll";

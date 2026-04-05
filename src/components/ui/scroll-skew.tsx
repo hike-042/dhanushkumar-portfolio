@@ -14,7 +14,7 @@ export default function ScrollSkew({ children }: { children: React.ReactNode }) 
   const skewY        = useTransform(smoothV, [-2200, 2200], [1.6, -1.6])
 
   return (
-    <motion.div style={{ skewY, willChange: 'transform' }}>
+    <motion.div className="scroll-skew-shell" style={{ skewY, willChange: 'transform' }}>
       {children}
     </motion.div>
   )

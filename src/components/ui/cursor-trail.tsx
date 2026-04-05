@@ -47,6 +47,7 @@ export default function CursorTrail() {
   return (
     <div
       ref={containerRef}
+      className="cursor-trail-root"
       style={{ position: 'fixed', inset: 0, pointerEvents: 'none', zIndex: 9989 }}
     />
   )

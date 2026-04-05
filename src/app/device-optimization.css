@@ -1,0 +1,190 @@
+/* Device optimization tuned for this portfolio's existing components. */
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Desktop: keep the full motion system. */
+@media (min-width: 1024px) {
+  .device-animate {
+    transition: transform 0.6s ease, opacity 0.6s ease, filter 0.6s ease;
+  }
+
+  .device-hover:hover {
+    transform: translateY(-2px) scale(1.02);
+  }
+}
+
+/* Tablet: reduce intensity and expensive blur effects. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .device-animate {
+    transition: transform 0.35s ease, opacity 0.35s ease, filter 0.35s ease;
+  }
+
+  .device-hover:hover {
+    transform: translateY(-1px) scale(1.01);
+  }
+
+  .site-blob {
+    filter: blur(56px) !important;
+    opacity: 0.75;
+  }
+
+  .site-dot-grid {
+    opacity: 0.3 !important;
+  }
+
+  .noise-overlay {
+    opacity: 0.02 !important;
+  }
+
+  .gallery-slider .list {
+    animation-duration: 24s !important;
+  }
+
+  .nav-glass {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+}
+
+/* Mobile: performance first. Strip back the expensive, mostly decorative motion. */
+@media (max-width: 767px) {
+  .device-animate,
+  .animate,
+  .reveal,
+  .animate-fade-up {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  .device-hover:hover,
+  .pillar-card:hover,
+  .project-card:hover,
+  .contact-link:hover,
+  .btn-primary:hover,
+  .btn-ghost:hover,
+  .animated-cta:hover,
+  .social-icons .icon-content a:hover {
+    transform: none !important;
+    box-shadow: inherit !important;
+  }
+
+  .cursor-root,
+  .cursor-trail-root,
+  .scroll-progress,
+  .scroll-hint {
+    display: none !important;
+  }
+
+  .scroll-skew-shell {
+    transform: none !important;
+  }
+
+  .site-blob,
+  .site-particle {
+    display: none !important;
+  }
+
+  .site-dot-grid {
+    opacity: 0.16 !important;
+    animation: none !important;
+  }
+
+  .noise-overlay {
+    opacity: 0.015 !important;
+  }
+
+  .gallery-slider {
+    mask-image: none;
+  }
+
+  .gallery-slider .list {
+    animation: none !important;
+    transform: none !important;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    scroll-snap-type: x proximity;
+  }
+
+  .gallery-slider .list .item {
+    scroll-snap-align: center;
+  }
+
+  .gallery-slider:hover .list .item img,
+  .gallery-slider .list .item:hover img {
+    filter: none !important;
+    transform: none !important;
+  }
+
+  .profile-ring-wrap::before,
+  .gradient-text {
+    animation: none !important;
+  }
+
+  .animated-cta .cta-circle,
+  .pillar-card::after,
+  .project-card::after,
+  .project-card::before,
+  .section-label::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  button,
+  a,
+  input,
+  label[for],
+  .dn-toggle {
+    min-height: 44px;
+  }
+}
+
+/* Very small phones: compress decorative spacing further. */
+@media (max-width: 479px) {
+  .site-section {
+    padding-inline: 14px !important;
+  }
+
+  .hero-inner {
+    gap: 24px !important;
+  }
+
+  .social-icons {
+    gap: 10px !important;
+  }
+
+  .social-icons .icon-content a {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Respect OS accessibility preference across all devices. */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  .site-blob,
+  .site-particle,
+  .cursor-root,
+  .cursor-trail-root {
+    display: none !important;
+  }
+}

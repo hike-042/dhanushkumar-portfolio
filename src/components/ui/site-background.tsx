@@ -28,6 +28,7 @@ export default function SiteBackground() {
   return (
     <div
       aria-hidden
+      className="site-background"
       style={{
         position: 'fixed',
         inset: 0,
@@ -37,7 +38,7 @@ export default function SiteBackground() {
       }}
     >
       {/* ── Morphing ambient blobs ── */}
-      <div style={{
+      <div className="site-blob site-blob-a" style={{
         position: 'absolute',
         top: '-15%',
         left: '-10%',
@@ -48,7 +49,7 @@ export default function SiteBackground() {
         animation: 'blob-float-1 28s ease-in-out infinite',
         willChange: 'transform',
       }} />
-      <div style={{
+      <div className="site-blob site-blob-b" style={{
         position: 'absolute',
         bottom: '-20%',
         right: '-12%',
@@ -59,7 +60,7 @@ export default function SiteBackground() {
         animation: 'blob-float-2 35s ease-in-out infinite',
         willChange: 'transform',
       }} />
-      <div style={{
+      <div className="site-blob site-blob-c" style={{
         position: 'absolute',
         top: '40%',
         right: '20%',
@@ -81,6 +82,7 @@ export default function SiteBackground() {
       {PARTICLES.map((p, i) => (
         <div
           key={i}
+          className="site-particle"
           style={{
             position: 'absolute',
             left: `${p.x}%`,
