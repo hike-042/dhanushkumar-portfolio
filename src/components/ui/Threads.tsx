@@ -144,7 +144,6 @@ export default function Threads({
     if (!containerRef.current) return
     const container = containerRef.current
 
-    // Guard: skip if WebGL is unavailable (some browsers/settings disable it)
     if (!window.WebGLRenderingContext) return
 
     const renderer = new Renderer({ alpha: true })
@@ -152,7 +151,6 @@ export default function Threads({
     gl.clearColor(0, 0, 0, 0)
     gl.enable(gl.BLEND)
     gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA)
-    // Clear to transparent BEFORE appending - prevents the default white canvas flash
     gl.clear(gl.COLOR_BUFFER_BIT)
     ;(gl.canvas as HTMLCanvasElement).style.opacity = '0'
     container.appendChild(gl.canvas)
@@ -182,10 +180,11 @@ export default function Threads({
       program.uniforms.iResolution.value.g = clientHeight
       program.uniforms.iResolution.value.b = clientWidth / clientHeight
     }
+
     window.addEventListener('resize', resize)
     resize()
 
-    let currentMouse = [0.5, 0.5]
+    const currentMouse = [0.5, 0.5]
     let targetMouse = [0.5, 0.5]
 
     function handleMouseMove(e: MouseEvent) {
@@ -194,9 +193,11 @@ export default function Threads({
       const y = 1.0 - (e.clientY - rect.top) / rect.height
       targetMouse = [x, y]
     }
+
     function handleMouseLeave() {
       targetMouse = [0.5, 0.5]
     }
+
     if (enableMouseInteraction) {
       container.addEventListener('mousemove', handleMouseMove)
       container.addEventListener('mouseleave', handleMouseLeave)
@@ -214,16 +215,19 @@ export default function Threads({
         program.uniforms.uMouse.value[0] = 0.5
         program.uniforms.uMouse.value[1] = 0.5
       }
+
       program.uniforms.iTime.value = t * 0.001
       renderer.render({ scene: mesh })
-      // Fade in after the first frame is painted - canvas is never seen as white
+
       if (firstFrame) {
         firstFrame = false
         ;(gl.canvas as HTMLCanvasElement).style.transition = 'opacity 0.4s ease'
         ;(gl.canvas as HTMLCanvasElement).style.opacity = '0.35'
       }
+
       animationFrameId.current = requestAnimationFrame(update)
     }
+
     animationFrameId.current = requestAnimationFrame(update)
 
     return () => {

@@ -10,10 +10,10 @@ import TextScramble from './ui/text-scramble'
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1]
 
 const PILLARS = [
-  { icon: '🤝', name: 'Relationship Builder',  desc: 'Builds genuine trust with candidates and hiring managers alike' },
-  { icon: '🧠', name: 'Tech-Literate',          desc: 'Understands JDs, tech stacks, and what engineering teams actually need' },
-  { icon: '💬', name: 'Communicator',           desc: 'Public speaker, confident in rooms from campus to boardroom' },
-  { icon: '📊', name: 'Process-Driven',         desc: 'Brings structure: SOPs, tracking, quality management thinking' },
+  { icon: 'RB', name: 'Relationship Builder', desc: 'Builds genuine trust with candidates and hiring managers alike' },
+  { icon: 'TL', name: 'Tech-Literate', desc: 'Understands JDs, tech stacks, and what engineering teams actually need' },
+  { icon: 'CM', name: 'Communicator', desc: 'Public speaker, confident in rooms from campus to boardroom' },
+  { icon: 'PD', name: 'Process-Driven', desc: 'Brings structure: SOPs, tracking, quality management thinking' },
 ]
 
 const SKILLS = [
@@ -22,24 +22,24 @@ const SKILLS = [
     items: [
       { name: 'Talent Acquisition', level: 88 },
       { name: 'Campus Recruitment', level: 82 },
-      { name: 'JD Analysis',        level: 92 },
-      { name: 'Boolean Search',     level: 78 },
+      { name: 'JD Analysis', level: 92 },
+      { name: 'Boolean Search', level: 78 },
     ],
   },
   {
     group: 'Operations',
     items: [
       { name: 'Quality Management (ISO)', level: 75 },
-      { name: 'Stakeholder Management',   level: 80 },
-      { name: 'Process Design',           level: 72 },
+      { name: 'Stakeholder Management', level: 80 },
+      { name: 'Process Design', level: 72 },
     ],
   },
   {
     group: 'Communication',
     items: [
-      { name: 'Public Speaking',    level: 88 },
-      { name: 'Corporate Relations',level: 85 },
-      { name: 'Team Leadership',    level: 80 },
+      { name: 'Public Speaking', level: 88 },
+      { name: 'Corporate Relations', level: 85 },
+      { name: 'Team Leadership', level: 80 },
     ],
   },
 ]
@@ -51,7 +51,7 @@ const pillarContainer = {
 
 const pillarItem = {
   hidden: { opacity: 0, y: 24, scale: 0.95 },
-  show:   { opacity: 1, y: 0,  scale: 1,  transition: { duration: 0.55, ease } },
+  show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.55, ease } },
 }
 
 const skillContainer = {
@@ -61,13 +61,12 @@ const skillContainer = {
 
 const skillItem = {
   hidden: { opacity: 0, x: -16 },
-  show:   { opacity: 1, x: 0,   transition: { duration: 0.5, ease } },
+  show: { opacity: 1, x: 0, transition: { duration: 0.5, ease } },
 }
 
 export default function About() {
   return (
     <SectionWrapper id="about">
-
       <SectionLabel>About</SectionLabel>
 
       <h2
@@ -78,19 +77,19 @@ export default function About() {
       </h2>
 
       <TextReveal delay={0.12}>
-        <div style={{
-          padding: '20px 24px',
-          background: 'rgba(var(--accent-rgb), 0.07)',
-          border: '1px solid rgba(var(--accent-rgb), 0.20)',
-          borderRadius: 10,
-          marginBottom: 28,
-          maxWidth: 600,
-        }}>
+        <div
+          style={{
+            padding: '20px 24px',
+            background: 'rgba(var(--accent-rgb), 0.07)',
+            border: '1px solid rgba(var(--accent-rgb), 0.20)',
+            borderRadius: 10,
+            marginBottom: 28,
+            maxWidth: 600,
+          }}
+        >
           <p style={{ fontSize: '.88rem', fontWeight: 400, color: 'var(--text)', lineHeight: 1.75 }}>
             <strong style={{ color: 'var(--accent)' }}>The rare combination:</strong>{' '}
-            Most HR professionals can't read a system design document. Most engineers don't want to write JDs.
-            I sit in between, with a BE in Computer Science and an MBA in HR, I understand both worlds deeply.
-            This makes me significantly more effective at sourcing, screening, and closing technical talent.
+            Most HR professionals can&apos;t read a system design document. Most engineers don&apos;t want to write JDs. I sit in between, with a BE in Computer Science and an MBA in HR, so I understand both worlds deeply. This makes me significantly more effective at sourcing, screening, and closing technical talent.
           </p>
         </div>
       </TextReveal>
@@ -98,15 +97,17 @@ export default function About() {
       <TextReveal delay={0.16}>
         <p style={{ fontSize: '1rem', fontWeight: 300, color: 'var(--text-2)', lineHeight: 1.8, maxWidth: 560, marginBottom: 40 }}>
           Currently completing a mandatory internship at{' '}
-          <a href="https://4gd.ai" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text)', fontWeight: 500, textDecoration: 'underline', textDecorationColor: 'var(--line)', textUnderlineOffset: '3px' }}>4Good.AI</a>{' '}
-          as Quality &amp; Inventory Coordinator,
-          where I'm building operational systems from scratch. Previously worked in corporate relations and placement
-          at{' '}<a href="https://pes.edu" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text)', fontWeight: 500, textDecoration: 'underline', textDecorationColor: 'var(--line)', textUnderlineOffset: '3px' }}>PES University</a>'s
-          placement cell, managing recruiter relationships end-to-end.
+          <a href="https://4gd.ai" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text)', fontWeight: 500, textDecoration: 'underline', textDecorationColor: 'var(--line)', textUnderlineOffset: '3px' }}>
+            4Good.AI
+          </a>{' '}
+          as Quality &amp; Inventory Coordinator, where I&apos;m building operational systems from scratch. Previously worked in corporate relations and placement at{' '}
+          <a href="https://pes.edu" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text)', fontWeight: 500, textDecoration: 'underline', textDecorationColor: 'var(--line)', textUnderlineOffset: '3px' }}>
+            PES University
+          </a>
+          &apos;s placement cell, managing recruiter relationships end-to-end.
         </p>
       </TextReveal>
 
-      {/* ── PILLARS ── */}
       <motion.div
         variants={pillarContainer}
         initial="hidden"
@@ -133,7 +134,7 @@ export default function About() {
               borderRadius: 10,
             }}
           >
-            <div style={{ fontSize: '1.3rem', marginBottom: 8 }}>{p.icon}</div>
+            <div style={{ fontSize: '1.1rem', marginBottom: 8, fontWeight: 600 }}>{p.icon}</div>
             <div style={{ fontSize: '.78rem', fontWeight: 500, letterSpacing: '.04em', textTransform: 'uppercase', color: 'var(--text)', marginBottom: 4 }}>
               {p.name}
             </div>
@@ -144,7 +145,6 @@ export default function About() {
         ))}
       </motion.div>
 
-      {/* ── SKILLS WITH BARS ── */}
       <SectionLabel style={{ marginBottom: 16 }}>Core Skills</SectionLabel>
 
       <motion.div
@@ -180,13 +180,7 @@ export default function About() {
                       <CountUp target={item.level} duration={900} />%
                     </span>
                   </div>
-                  {/* Bar track */}
-                  <div style={{
-                    height: 3,
-                    borderRadius: 99,
-                    background: 'var(--line)',
-                    overflow: 'hidden',
-                  }}>
+                  <div style={{ height: 3, borderRadius: 99, background: 'var(--line)', overflow: 'hidden' }}>
                     <motion.div
                       initial={{ width: 0 }}
                       whileInView={{ width: `${item.level}%` }}
@@ -206,7 +200,6 @@ export default function About() {
         ))}
       </motion.div>
 
-      {/* ── EDUCATION TIMELINE ── */}
       <SectionLabel style={{ marginTop: 48, marginBottom: 16 }}>Education</SectionLabel>
       <motion.div
         variants={pillarContainer}
@@ -220,17 +213,17 @@ export default function About() {
           {
             degree: 'MBA - Human Resources',
             school: 'PES University, Bengaluru',
-            year: '2024 – 2026',
+            year: '2024 - 2026',
             badge: 'Pursuing',
-            icon: '🎓',
+            icon: 'MBA',
             highlights: ['Talent Acquisition', 'OB & HR Analytics', 'Corporate Relations Cell'],
           },
           {
             degree: 'BE - Computer Science & Engineering',
             school: 'Mepco Schlenk Engineering College',
-            year: '2020 – 2024',
+            year: '2020 - 2024',
             badge: 'Completed',
-            icon: '💻',
+            icon: 'CSE',
             highlights: ['Data Structures', 'DBMS', 'Software Engineering'],
           },
         ].map(edu => (
@@ -246,14 +239,20 @@ export default function About() {
             }}
           >
             <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 12 }}>
-              <span style={{ fontSize: '1.5rem' }}>{edu.icon}</span>
-              <span style={{
-                fontSize: '.65rem', fontWeight: 600, letterSpacing: '.06em', textTransform: 'uppercase',
-                padding: '3px 10px', borderRadius: 20,
-                background: 'rgba(var(--accent-rgb), 0.12)',
-                color: 'var(--accent)',
-                border: '1px solid rgba(var(--accent-rgb), 0.25)',
-              }}>
+              <span style={{ fontSize: '.95rem', fontWeight: 700 }}>{edu.icon}</span>
+              <span
+                style={{
+                  fontSize: '.65rem',
+                  fontWeight: 600,
+                  letterSpacing: '.06em',
+                  textTransform: 'uppercase',
+                  padding: '3px 10px',
+                  borderRadius: 20,
+                  background: 'rgba(var(--accent-rgb), 0.12)',
+                  color: 'var(--accent)',
+                  border: '1px solid rgba(var(--accent-rgb), 0.25)',
+                }}
+              >
                 {edu.badge}
               </span>
             </div>
@@ -264,11 +263,7 @@ export default function About() {
             <div style={{ fontSize: '.72rem', color: 'var(--text-3)', marginBottom: 14, fontVariantNumeric: 'tabular-nums' }}>{edu.year}</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
               {edu.highlights.map(h => (
-                <span key={h} style={{
-                  fontSize: '.68rem', padding: '2px 9px', borderRadius: 20,
-                  background: 'var(--bg)', border: '1px solid var(--line)',
-                  color: 'var(--text-3)',
-                }}>
+                <span key={h} style={{ fontSize: '.68rem', padding: '2px 9px', borderRadius: 20, background: 'var(--bg)', border: '1px solid var(--line)', color: 'var(--text-3)' }}>
                   {h}
                 </span>
               ))}
@@ -277,7 +272,6 @@ export default function About() {
         ))}
       </motion.div>
 
-      {/* ── TOOLS / CERTIFICATIONS STRIP ── */}
       <SectionLabel style={{ marginBottom: 16 }}>Tools & Platforms</SectionLabel>
       <motion.div
         variants={pillarContainer}
@@ -296,8 +290,10 @@ export default function About() {
             variants={pillarItem}
             whileHover={{ scale: 1.06, transition: { duration: 0.15 } }}
             style={{
-              fontSize: '.78rem', fontWeight: 400,
-              padding: '7px 16px', borderRadius: 20,
+              fontSize: '.78rem',
+              fontWeight: 400,
+              padding: '7px 16px',
+              borderRadius: 20,
               background: 'var(--bg-card)',
               border: '1px solid var(--line)',
               color: i < 3 ? 'var(--accent)' : 'var(--text-2)',
@@ -310,7 +306,6 @@ export default function About() {
         ))}
       </motion.div>
 
-      {/* ── BRING vs LOOKING FOR ── */}
       <SectionLabel style={{ marginBottom: 16 }}>Fit at a Glance</SectionLabel>
       <motion.div
         variants={pillarContainer}
@@ -354,18 +349,14 @@ export default function About() {
               padding: '22px 24px',
             }}
           >
-            <div style={{
-              fontSize: '.7rem', fontWeight: 600, letterSpacing: '.1em',
-              textTransform: 'uppercase', marginBottom: 16,
-              color: col.accent ? 'var(--accent)' : 'var(--text-3)',
-            }}>
+            <div style={{ fontSize: '.7rem', fontWeight: 600, letterSpacing: '.1em', textTransform: 'uppercase', marginBottom: 16, color: col.accent ? 'var(--accent)' : 'var(--text-3)' }}>
               {col.title}
             </div>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
               {col.items.map(item => (
                 <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, fontSize: '.84rem', color: 'var(--text-2)', lineHeight: 1.5 }}>
                   <span style={{ color: col.accent ? 'var(--accent)' : 'var(--text-3)', marginTop: 2, flexShrink: 0 }}>
-                    {col.accent ? '✓' : '→'}
+                    {col.accent ? 'OK' : '->'}
                   </span>
                   {item}
                 </li>
@@ -375,7 +366,6 @@ export default function About() {
         ))}
       </motion.div>
 
-      {/* ── WORKING STYLE TAGS ── */}
       <SectionLabel style={{ marginBottom: 16 }}>Working Style</SectionLabel>
       <motion.div
         variants={pillarContainer}
@@ -385,33 +375,35 @@ export default function About() {
         style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}
       >
         {[
-          { label: 'Fast Learner',       icon: '⚡' },
-          { label: 'Detail-Oriented',    icon: '🔍' },
-          { label: 'Collaborative',      icon: '🤝' },
-          { label: 'Data-Informed',      icon: '📊' },
-          { label: 'Empathetic',         icon: '💚' },
-          { label: 'Async-Friendly',     icon: '🌐' },
-          { label: 'Structured Thinker', icon: '🗂️' },
-          { label: 'Ownership Mindset',  icon: '🚀' },
+          { label: 'Fast Learner', icon: 'FL' },
+          { label: 'Detail-Oriented', icon: 'DO' },
+          { label: 'Collaborative', icon: 'CO' },
+          { label: 'Data-Informed', icon: 'DI' },
+          { label: 'Empathetic', icon: 'EM' },
+          { label: 'Async-Friendly', icon: 'AF' },
+          { label: 'Structured Thinker', icon: 'ST' },
+          { label: 'Ownership Mindset', icon: 'OM' },
         ].map(tag => (
           <motion.div
             key={tag.label}
             variants={pillarItem}
             whileHover={{ y: -2, scale: 1.04, transition: { duration: 0.15 } }}
             style={{
-              display: 'flex', alignItems: 'center', gap: 7,
-              padding: '8px 16px', borderRadius: 20,
+              display: 'flex',
+              alignItems: 'center',
+              gap: 7,
+              padding: '8px 16px',
+              borderRadius: 20,
               background: 'var(--bg-card)',
               border: '1px solid var(--line)',
               cursor: 'default',
             }}
           >
-            <span style={{ fontSize: '.85rem' }}>{tag.icon}</span>
+            <span style={{ fontSize: '.72rem', fontWeight: 700 }}>{tag.icon}</span>
             <span style={{ fontSize: '.78rem', fontWeight: 400, color: 'var(--text-2)' }}>{tag.label}</span>
           </motion.div>
         ))}
       </motion.div>
-
     </SectionWrapper>
   )
 }

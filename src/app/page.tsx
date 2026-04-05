@@ -1,16 +1,16 @@
-// page.tsx — PERFORMANCE-FIXED
+// page.tsx - PERFORMANCE-FIXED
 // Removed: zoom-parallax, cursor-glow
 // All sections load cleanly with no layout shift or black voids
 
-import Navbar     from '@/components/Navbar'
-import Hero       from '@/components/Hero'
-import Marquee    from '@/components/ui/marquee'
-import About      from '@/components/About'
+import Navbar from '@/components/Navbar'
+import Hero from '@/components/Hero'
+import Marquee from '@/components/ui/marquee'
+import About from '@/components/About'
 import Experience from '@/components/Experience'
-import Projects   from '@/components/Projects'
-import Contact    from '@/components/Contact'
-import Persona    from '@/components/Persona'
-import Gallery    from '@/components/Gallery'
+import Projects from '@/components/Projects'
+import Contact from '@/components/Contact'
+import Persona from '@/components/Persona'
+import Gallery from '@/components/Gallery'
 import ScrollSkew from '@/components/ui/scroll-skew'
 
 const Divider = () => (
@@ -37,7 +37,7 @@ export default function Home() {
         <Contact />
       </ScrollSkew>
 
-      {/* ── FOOTER ── */}
+      {/* Footer */}
       <footer style={{ borderTop: '1px solid var(--line)', padding: '28px 24px' }}>
         <div
           className="footer-inner"

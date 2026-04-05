@@ -1,13 +1,11 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion'
+import { motion, AnimatePresence, useScroll } from 'framer-motion'
 
 export default function BackToTop() {
   const [visible, setVisible] = useState(false)
   const { scrollYProgress } = useScroll()
-
-  // conic-gradient fill % driven by scroll position
   const [fill, setFill] = useState(0)
 
   useEffect(() => {
@@ -22,8 +20,8 @@ export default function BackToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
-  const circumference = 2 * Math.PI * 20   // r=20
-  const dashOffset    = circumference * (1 - fill / 100)
+  const circumference = 2 * Math.PI * 20
+  const dashOffset = circumference * (1 - fill / 100)
 
   return (
     <AnimatePresence>
@@ -33,15 +31,15 @@ export default function BackToTop() {
           data-cursor="Top"
           onClick={scrollToTop}
           initial={{ opacity: 0, scale: 0.7, y: 12 }}
-          animate={{ opacity: 1, scale: 1,   y: 0  }}
-          exit={{    opacity: 0, scale: 0.7, y: 12  }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          exit={{ opacity: 0, scale: 0.7, y: 12 }}
           transition={{ type: 'spring', stiffness: 300, damping: 24 }}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.93 }}
           aria-label="Back to top"
           style={{
             position: 'fixed',
-            bottom: 84,       // sits above the ⌘K trigger
+            bottom: 84,
             right: 28,
             width: 48,
             height: 48,
@@ -58,22 +56,24 @@ export default function BackToTop() {
             fontFamily: 'inherit',
           }}
         >
-          {/* Scroll-fill ring */}
           <svg
-            width="48" height="48"
+            width="48"
+            height="48"
             viewBox="0 0 48 48"
             style={{ position: 'absolute', inset: 0, transform: 'rotate(-90deg)' }}
           >
-            {/* Track */}
             <circle
-              cx="24" cy="24" r="20"
+              cx="24"
+              cy="24"
+              r="20"
               fill="none"
               stroke="var(--line)"
               strokeWidth="2"
             />
-            {/* Fill */}
             <circle
-              cx="24" cy="24" r="20"
+              cx="24"
+              cy="24"
+              r="20"
               fill="none"
               stroke="var(--accent)"
               strokeWidth="2"
@@ -84,9 +84,9 @@ export default function BackToTop() {
             />
           </svg>
 
-          {/* Arrow icon */}
           <svg
-            width="14" height="14"
+            width="14"
+            height="14"
             viewBox="0 0 24 24"
             fill="none"
             stroke="var(--accent)"

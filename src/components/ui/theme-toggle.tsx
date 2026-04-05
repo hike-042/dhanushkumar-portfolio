@@ -7,12 +7,6 @@ const ease: [number, number, number, number] = [0.22, 1, 0.36, 1]
 
 interface Burst { x: number; y: number; color: string }
 
-/**
- * Day / Night toggle switch.
- * Unchecked = light mode (day sky, sun).
- * Checked   = dark mode (night sky, moon + craters + stars).
- * Adapted from Uiverse.io (mobinkakei).
- */
 export default function ThemeToggle() {
   const [dark, setDark] = useState(true)
   const [burst, setBurst] = useState<Burst | null>(null)
@@ -22,24 +16,22 @@ export default function ThemeToggle() {
     const saved = localStorage.getItem('arco-theme')
     const isDark = saved !== 'light'
     document.documentElement.classList.toggle('dark', isDark)
-    setDark(isDark)
+    requestAnimationFrame(() => setDark(isDark))
   }, [])
 
   const handleChange = () => {
     const isDark = !dark
-
-    // Capture old bg + toggle position before switching
     const oldBg = dark ? '#0a0a0a' : '#f8f7f4'
+
     if (labelRef.current) {
       const rect = labelRef.current.getBoundingClientRect()
       setBurst({
-        x: rect.left + rect.width  / 2,
-        y: rect.top  + rect.height / 2,
+        x: rect.left + rect.width / 2,
+        y: rect.top + rect.height / 2,
         color: oldBg,
       })
     }
 
-    // Apply theme immediately (content switches under the overlay)
     document.documentElement.classList.toggle('dark', isDark)
     document.documentElement.style.backgroundColor = isDark ? '#0a0a0a' : '#f8f7f4'
     document.documentElement.style.colorScheme = isDark ? 'dark' : 'light'
@@ -72,13 +64,12 @@ export default function ThemeToggle() {
         </label>
       </div>
 
-      {/* Radial wipe - old bg color shrinks to the toggle point, revealing new theme */}
       <AnimatePresence>
         {burst && (
           <motion.div
             key="theme-burst"
             initial={{ clipPath: `circle(150% at ${burst.x}px ${burst.y}px)` }}
-            animate={{ clipPath: `circle(0% at ${burst.x}px ${burst.y}px)`   }}
+            animate={{ clipPath: `circle(0% at ${burst.x}px ${burst.y}px)` }}
             transition={{ duration: 0.72, ease }}
             onAnimationComplete={() => setBurst(null)}
             style={{

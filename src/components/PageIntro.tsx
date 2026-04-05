@@ -9,15 +9,18 @@ export default function PageIntro() {
   const [show, setShow] = useState<boolean | null>(null)
 
   useEffect(() => {
-    if (sessionStorage.getItem('arco-intro-seen')) {
-      setShow(false)
+    const seen = sessionStorage.getItem('arco-intro-seen')
+    if (seen) {
+      requestAnimationFrame(() => setShow(false))
       return
     }
-    setShow(true)
+
+    requestAnimationFrame(() => setShow(true))
     const t = setTimeout(() => {
       setShow(false)
       sessionStorage.setItem('arco-intro-seen', '1')
     }, 2000)
+
     return () => clearTimeout(t)
   }, [])
 
@@ -43,7 +46,6 @@ export default function PageIntro() {
             overflow: 'hidden',
           }}
         >
-          {/* Name */}
           <motion.div
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
@@ -61,7 +63,6 @@ export default function PageIntro() {
             Dhanush<span style={{ color: '#3dba7e', fontStyle: 'italic' }}>.</span>
           </motion.div>
 
-          {/* Subtitle */}
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -78,7 +79,6 @@ export default function PageIntro() {
             Kumar R · Portfolio
           </motion.p>
 
-          {/* Accent line */}
           <motion.div
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
@@ -94,7 +94,6 @@ export default function PageIntro() {
             }}
           />
 
-          {/* Progress bar at bottom */}
           <motion.div
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
@@ -111,7 +110,6 @@ export default function PageIntro() {
             }}
           />
 
-          {/* Corner accents */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -119,8 +117,10 @@ export default function PageIntro() {
             transition={{ duration: 0.4, delay: 0.2 }}
             style={{
               position: 'absolute',
-              top: 28, left: 28,
-              width: 18, height: 18,
+              top: 28,
+              left: 28,
+              width: 18,
+              height: 18,
               borderTop: '1.5px solid #3dba7e',
               borderLeft: '1.5px solid #3dba7e',
               opacity: 0.5,
@@ -133,8 +133,10 @@ export default function PageIntro() {
             transition={{ duration: 0.4, delay: 0.25 }}
             style={{
               position: 'absolute',
-              bottom: 28, right: 28,
-              width: 18, height: 18,
+              bottom: 28,
+              right: 28,
+              width: 18,
+              height: 18,
               borderBottom: '1.5px solid #3dba7e',
               borderRight: '1.5px solid #3dba7e',
               opacity: 0.5,

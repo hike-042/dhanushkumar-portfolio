@@ -1,23 +1,24 @@
 import "./globals.css";
-import Script          from "next/script";
-import CursorGlow      from "@/components/ui/cursor-glow";
-import SmoothScroll    from "@/components/ui/smooth-scroll";
-import ScrollProgress  from "@/components/ui/scroll-progress";
-import SideNav         from "@/components/ui/side-nav";
-import PageIntro       from "@/components/PageIntro";
-import SiteBackground  from "@/components/ui/site-background";
-import MotionProvider    from "@/components/ui/motion-provider";
-import CommandPalette   from "@/components/ui/command-palette";
-import BackToTop        from "@/components/ui/back-to-top";
-import CursorTrail      from "@/components/ui/cursor-trail";
-import EasterEgg        from "@/components/ui/easter-egg";
+import Script from "next/script";
+import CursorGlow from "@/components/ui/cursor-glow";
+import SmoothScroll from "@/components/ui/smooth-scroll";
+import ScrollProgress from "@/components/ui/scroll-progress";
+import SideNav from "@/components/ui/side-nav";
+import PageIntro from "@/components/PageIntro";
+import SiteBackground from "@/components/ui/site-background";
+import MotionProvider from "@/components/ui/motion-provider";
+import CommandPalette from "@/components/ui/command-palette";
+import BackToTop from "@/components/ui/back-to-top";
+import CursorTrail from "@/components/ui/cursor-trail";
+import EasterEgg from "@/components/ui/easter-egg";
 import type { Metadata, Viewport } from "next";
 
 const GA_ID = "G-61E6D87NT5";
 
 export const metadata: Metadata = {
-  title: "Dhanush Kumar R — Talent Acquisition & HR Portfolio",
-  description: "Portfolio of Dhanush Kumar R (Arco) — MBA HR + BE CSE. Talent Acquisition Specialist bridging tech and people.",
+  title: "Dhanush Kumar R - Talent Acquisition & HR Portfolio",
+  description:
+    "Portfolio of Dhanush Kumar R (Arco) - MBA HR + BE CSE. Talent Acquisition Specialist bridging tech and people.",
 };
 
 export const viewport: Viewport = {
@@ -31,10 +32,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning style={{ backgroundColor: '#0a0a0a', colorScheme: 'dark' }}>
+    <html
+      lang="en"
+      className="dark"
+      suppressHydrationWarning
+      style={{ backgroundColor: "#0a0a0a", colorScheme: "dark" }}
+    >
       <head>
-        {/* ── Theme init — MUST be in <head> to run before body renders ── */}
-        {/* Sets html + injects body style so there is zero white flash      */}
+        {/* Theme init must be in head to run before body renders. */}
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){
@@ -52,7 +57,7 @@ export default function RootLayout({
         />
       </head>
       <body suppressHydrationWarning>
-        {/* ── Google Analytics 4 ── */}
+        {/* Google Analytics 4 */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
           strategy="afterInteractive"
