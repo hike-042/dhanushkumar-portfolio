@@ -1,0 +1,13 @@
+.threads-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: translateZ(0);
+  isolation: isolate;
+}
+
+.threads-container canvas {
+  display: block;
+  opacity: 0; /* starts hidden; JS fades in after first frame is painted */
+  background: transparent;
+}
