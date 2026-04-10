@@ -216,7 +216,7 @@ export default function About() {
             year: '2024 - 2026',
             badge: 'Pursuing',
             icon: 'MBA',
-            highlights: ['Talent Acquisition', 'OB & HR Analytics', 'Corporate Relations Cell'],
+            highlights: ['Talent Acquisition', 'OB & HR Analytics', 'Summit Head'],
           },
           {
             degree: 'BE - Computer Science & Engineering',
@@ -224,7 +224,7 @@ export default function About() {
             year: '2020 - 2024',
             badge: 'Completed',
             icon: 'CSE',
-            highlights: ['Data Structures', 'DBMS', 'Software Engineering'],
+            highlights: ['DBMS', 'Software Engineering'],
           },
         ].map(edu => (
           <motion.div
@@ -375,14 +375,14 @@ export default function About() {
         style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}
       >
         {[
-          { label: 'Fast Learner', icon: 'FL' },
-          { label: 'Detail-Oriented', icon: 'DO' },
-          { label: 'Collaborative', icon: 'CO' },
-          { label: 'Data-Informed', icon: 'DI' },
-          { label: 'Empathetic', icon: 'EM' },
-          { label: 'Async-Friendly', icon: 'AF' },
-          { label: 'Structured Thinker', icon: 'ST' },
-          { label: 'Ownership Mindset', icon: 'OM' },
+          { label: 'Fast Learner', icon: '⚡' },
+          { label: 'Detail-Oriented', icon: '🔍' },
+          { label: 'Collaborative', icon: '🤝' },
+          { label: 'Data-Informed', icon: '📊' },
+          { label: 'Empathetic', icon: '❤️' },
+          { label: 'Async-Friendly', icon: '💬' },
+          { label: 'Structured Thinker', icon: '🧩' },
+          { label: 'Ownership Mindset', icon: '🎯' },
         ].map(tag => (
           <motion.div
             key={tag.label}
