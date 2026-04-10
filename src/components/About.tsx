@@ -282,7 +282,7 @@ export default function About() {
       >
         {[
           'LinkedIn Recruiter', 'Boolean Search', 'ATS Systems',
-          'MS Excel', 'Google Workspace', 'Notion', 'Canva',
+          'MS Excel', 'Google Workspace', 'AI Tools', 'Canva',
           'Applicant Tracking', 'JD Writing', 'Interview Coordination',
         ].map((tool, i) => (
           <motion.span
