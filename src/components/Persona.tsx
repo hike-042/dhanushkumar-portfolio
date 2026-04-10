@@ -40,17 +40,11 @@ const LEARNING = [
 ]
 
 const FUN_FACTS = [
-  { emoji: 'PY', fact: 'Can debug a Python script before writing a job description for the role.' },
-  { emoji: 'SP', fact: 'Comfortable presenting to rooms of 5 or 500 - done both at university events.' },
-  { emoji: 'BE', fact: 'Reads about behavioral economics and how cognitive biases show up in hiring decisions.' },
-  {
-    emoji: 'OP',
-    fact: 'One Piece fan. Luffy said it best - "As long as I live, there are infinite chances." That is the recruiter mindset too: every rejection is just the next door.',
-  },
-  {
-    emoji: 'BC',
-    fact: 'Black Clover fan. Asta\'s motto is "My magic is never giving up!" - no shortcuts, just relentless effort. Applies to sourcing passive candidates at midnight.',
-  },
+  { emoji: '🐍', fact: 'Can debug a Python script before writing a job description for the role.' },
+  { emoji: '🎙️', fact: 'Comfortable presenting to rooms of 5 or 500 - done both at university events.' },
+  { emoji: '🧠', fact: 'Reads about behavioral economics and how cognitive biases show up in hiring decisions.' },
+  { emoji: '🏴‍☠️', fact: 'One Piece fan. Luffy said it best - "As long as I live, there are infinite chances." That is the recruiter mindset too: every rejection is just the next door.' },
+  { emoji: '⚡', fact: 'Black Clover fan. Asta\'s motto is "My magic is never giving up!" - no shortcuts, just relentless effort. Applies to sourcing passive candidates at midnight.' },
 ]
 
 const cardContainer = {
@@ -193,8 +187,8 @@ export default function Persona() {
               borderRadius: 10,
             }}
           >
-            <span style={{ fontSize: '.75rem', fontWeight: 700, flexShrink: 0, lineHeight: 1.8 }}>{f.emoji}</span>
-            <p style={{ fontSize: '.88rem', fontWeight: 300, color: 'var(--text-2)', lineHeight: 1.65 }}>
+            <span style={{ fontSize: '1.4rem', flexShrink: 0, lineHeight: 1.4 }}>{f.emoji}</span>
+            <p style={{ fontSize: '.88rem', fontWeight: 400, color: 'var(--text)', lineHeight: 1.65 }}>
               {f.fact}
             </p>
           </motion.div>
