@@ -356,7 +356,7 @@ export default function About() {
               {col.items.map(item => (
                 <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, fontSize: '.84rem', color: 'var(--text-2)', lineHeight: 1.5 }}>
                   <span style={{ color: col.accent ? 'var(--accent)' : 'var(--text-3)', marginTop: 2, flexShrink: 0 }}>
-                    {col.accent ? 'OK' : '->'}
+                    {col.accent ? '✦' : '→'}
                   </span>
                   {item}
                 </li>
