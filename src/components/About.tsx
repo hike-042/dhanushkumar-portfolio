@@ -10,10 +10,10 @@ import TextScramble from './ui/text-scramble'
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1]
 
 const PILLARS = [
-  { icon: 'RB', name: 'Relationship Builder', desc: 'Builds genuine trust with candidates and hiring managers alike' },
-  { icon: 'TL', name: 'Tech-Literate', desc: 'Understands JDs, tech stacks, and what engineering teams actually need' },
-  { icon: 'CM', name: 'Communicator', desc: 'Public speaker, confident in rooms from campus to boardroom' },
-  { icon: 'PD', name: 'Process-Driven', desc: 'Brings structure: SOPs, tracking, quality management thinking' },
+  { icon: '🤝', name: 'Relationship Builder', desc: 'Builds genuine trust with candidates and hiring managers alike' },
+  { icon: '💻', name: 'Tech-Literate', desc: 'Understands JDs, tech stacks, and what engineering teams actually need' },
+  { icon: '🎤', name: 'Communicator', desc: 'Public speaker, confident in rooms from campus to boardroom' },
+  { icon: '⚙️', name: 'Process-Driven', desc: 'Brings structure: SOPs, tracking, quality management thinking' },
 ]
 
 const SKILLS = [

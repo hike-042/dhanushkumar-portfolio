@@ -485,7 +485,7 @@ export default function Projects() {
           className="font-fraunces"
           style={{ fontSize: 'clamp(1.8rem, 4vw, 2.6rem)', fontWeight: 400, lineHeight: 1.1, letterSpacing: '-.02em', marginBottom: 36 }}
         >
-          Work that<br />left a mark.
+          Work that left a mark.
         </h2>
       </TextReveal>
 

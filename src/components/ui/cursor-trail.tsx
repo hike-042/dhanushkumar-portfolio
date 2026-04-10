@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import useDeviceProfile from './use-device-profile'
 
 /**
  * Spawns small accent-coloured dots at the cursor position as it moves.
@@ -8,10 +9,13 @@ import { useEffect, useRef } from 'react'
  * Only spawns when cursor has moved ≥14px to avoid dense clumping.
  */
 export default function CursorTrail() {
+  const { isTouch, prefersReducedMotion } = useDeviceProfile()
   const containerRef = useRef<HTMLDivElement>(null)
   const lastPos = useRef({ x: 0, y: 0 })
 
   useEffect(() => {
+    if (isTouch || prefersReducedMotion) return
+
     const container = containerRef.current
     if (!container) return
 
@@ -42,7 +46,9 @@ export default function CursorTrail() {
 
     window.addEventListener('mousemove', onMove)
     return () => window.removeEventListener('mousemove', onMove)
-  }, [])
+  }, [isTouch, prefersReducedMotion])
+
+  if (isTouch || prefersReducedMotion) return null
 
   return (
     <div

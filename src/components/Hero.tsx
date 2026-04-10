@@ -5,6 +5,7 @@ import { motion, useMotionValue, useSpring, useScroll, useTransform, AnimatePres
 import Image from 'next/image'
 import TextScramble from './ui/text-scramble'
 import AnimatedCTA from './ui/animated-cta'
+import useDeviceProfile from './ui/use-device-profile'
 
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1]
 
@@ -62,8 +63,11 @@ const imgVariant = {
 }
 
 export default function Hero() {
+  const { isMobile, isTablet, isTouch, prefersReducedMotion } = useDeviceProfile()
   const sectionRef = useRef<HTMLElement>(null)
   const [roleIdx, setRoleIdx] = useState(0)
+  const disableHeavyMotion = isMobile || prefersReducedMotion
+  const disableMouseParallax = isTouch || isTablet || disableHeavyMotion
 
   useEffect(() => {
     const t = setInterval(() => setRoleIdx(i => (i + 1) % ROLES.length), 2800)
@@ -116,8 +120,8 @@ export default function Hero() {
     <section
       ref={sectionRef}
       id="hero"
-      onMouseMove={onMouseMove}
-      onMouseLeave={onMouseLeave}
+      onMouseMove={disableMouseParallax ? undefined : onMouseMove}
+      onMouseLeave={disableMouseParallax ? undefined : onMouseLeave}
       style={{
         minHeight: '100vh',
         display: 'flex',
@@ -128,9 +132,9 @@ export default function Hero() {
         overflow: 'hidden',
       }}
     >
-      <motion.div style={{ position: 'absolute', top: '-10%', right: '-8%', width: 560, height: 560, borderRadius: '50%', background: 'radial-gradient(circle, rgba(var(--accent-rgb), 0.22) 0%, transparent 70%)', filter: 'blur(72px)', pointerEvents: 'none', zIndex: 0, x: b2mx, y: blob2CY, willChange: 'transform' }} />
-      <motion.div style={{ position: 'absolute', bottom: '0%', left: '-12%', width: 420, height: 420, borderRadius: '50%', background: 'radial-gradient(circle, rgba(var(--accent-rgb), 0.16) 0%, transparent 65%)', filter: 'blur(90px)', pointerEvents: 'none', zIndex: 0, x: b1mx, y: blob1CY, willChange: 'transform' }} />
-      <motion.div style={{ position: 'absolute', top: '35%', left: '40%', width: 260, height: 260, borderRadius: '50%', background: 'radial-gradient(circle, rgba(var(--accent-rgb), 0.12) 0%, transparent 60%)', filter: 'blur(60px)', pointerEvents: 'none', zIndex: 0, x: b3mx, y: blob3CY, willChange: 'transform' }} />
+      {!disableHeavyMotion && <motion.div style={{ position: 'absolute', top: '-10%', right: '-8%', width: 560, height: 560, borderRadius: '50%', background: 'radial-gradient(circle, rgba(var(--accent-rgb), 0.22) 0%, transparent 70%)', filter: 'blur(72px)', pointerEvents: 'none', zIndex: 0, x: b2mx, y: blob2CY, willChange: 'transform' }} />}
+      {!disableHeavyMotion && <motion.div style={{ position: 'absolute', bottom: '0%', left: '-12%', width: 420, height: 420, borderRadius: '50%', background: 'radial-gradient(circle, rgba(var(--accent-rgb), 0.16) 0%, transparent 65%)', filter: 'blur(90px)', pointerEvents: 'none', zIndex: 0, x: b1mx, y: blob1CY, willChange: 'transform' }} />}
+      {!disableHeavyMotion && <motion.div style={{ position: 'absolute', top: '35%', left: '40%', width: 260, height: 260, borderRadius: '50%', background: 'radial-gradient(circle, rgba(var(--accent-rgb), 0.12) 0%, transparent 60%)', filter: 'blur(60px)', pointerEvents: 'none', zIndex: 0, x: b3mx, y: blob3CY, willChange: 'transform' }} />}
 
       <motion.div
         variants={page}

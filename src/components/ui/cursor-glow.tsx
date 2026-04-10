@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence, useMotionValue, useSpring } from 'framer-motion'
+import useDeviceProfile from './use-device-profile'
 
 /**
  * Premium custom cursor - replaces the native cursor on desktop.
@@ -10,6 +11,7 @@ import { motion, AnimatePresence, useMotionValue, useSpring } from 'framer-motio
  * - On hover over links/buttons: ring expands and fills, dot hides
  */
 export default function CursorGlow() {
+  const { isTouch, prefersReducedMotion } = useDeviceProfile()
   const mouseX = useMotionValue(-200)
   const mouseY = useMotionValue(-200)
   const [hovering, setHovering] = useState(false)
@@ -25,6 +27,8 @@ export default function CursorGlow() {
   const dotY = useSpring(mouseY, { stiffness: 650, damping: 32 })
 
   useEffect(() => {
+    if (isTouch || prefersReducedMotion) return
+
     const onMove = (e: MouseEvent) => {
       mouseX.set(e.clientX)
       mouseY.set(e.clientY)
@@ -62,7 +66,9 @@ export default function CursorGlow() {
       document.removeEventListener('mousedown', onDown)
       document.removeEventListener('mouseup',   onUp)
     }
-  }, [mouseX, mouseY])
+  }, [isTouch, mouseX, mouseY, prefersReducedMotion])
+
+  if (isTouch || prefersReducedMotion) return null
 
   return (
     <div className="cursor-root">

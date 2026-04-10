@@ -9,22 +9,22 @@ const ease: [number, number, number, number] = [0.22, 1, 0.36, 1]
 
 const BELIEFS = [
   {
-    icon: 'ST',
+    icon: '📖',
     title: 'Every hire is a story',
     desc: "Recruitment isn't just filling seats - it's matching the right chapter of someone's career to the right company's journey.",
   },
   {
-    icon: 'TL',
+    icon: '🔧',
     title: 'Tech literacy is an HR superpower',
     desc: 'Understanding what engineers actually build makes me a far better recruiter than someone reading buzzwords off a JD.',
   },
   {
-    icon: 'PE',
+    icon: '⚖️',
     title: 'Process + empathy = great hiring',
     desc: 'Structure without care is cold. Care without structure is chaos. The best hiring combines both in equal measure.',
   },
   {
-    icon: 'HR',
+    icon: '❤️',
     title: "Why HR? I genuinely don't know - and that's the point.",
     desc: 'I never chose HR to tick a box. Something about connecting people to opportunity, about seeing someone get a role that changes their life - that just moves me. No logic. Pure pull.',
   },
