@@ -9,6 +9,7 @@ const ease: [number, number, number, number] = [0.22, 1, 0.36, 1]
 
 /* ── Company logo colours ─────────────────────────────────── */
 const LOGO_COLORS: Record<string, { bg: string; fg: string }> = {
+  'Netconnect Global (NCG)': { bg: '#0f4c81', fg: '#fff' },
   '4Good.AI':       { bg: '#1c6344', fg: '#fff' },
   'PES University': { bg: '#1e3a5f', fg: '#fff' },
   'NSS':            { bg: '#7c3d14', fg: '#fff' },
@@ -40,10 +41,21 @@ function CompanyLogo({ company }: { company: string }) {
 
 const data = [
   {
+    role: 'Talent Acquisition Intern',
+    company: 'Netconnect Global (NCG)',
+    duration: 'May 2026 – Present',
+    tag: 'Current',
+    details: [
+      'Supporting end-to-end talent acquisition processes',
+      'Sourcing and screening candidates across technical and non-technical roles',
+      'Coordinating interviews and maintaining candidate pipelines',
+    ],
+  },
+  {
     role: 'Project Management Intern',
     company: '4Good.AI',
-    duration: 'Feb 2026 – Present',
-    tag: 'Current',
+    duration: 'Feb 2026 – May 2026',
+    tag: 'Internship',
     details: [
       'Managed internal workflows and coordination',
       'Worked on structured documentation and process clarity',
