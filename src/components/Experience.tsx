@@ -41,14 +41,25 @@ function CompanyLogo({ company }: { company: string }) {
 
 const data = [
   {
-    role: 'Talent Acquisition Intern',
+    role: 'AI Automation Engineer',
     company: 'Netconnect Global (NCG)',
-    duration: 'May 2026 – Present',
+    duration: 'Jul 2026 – Present',
     tag: 'Current',
     details: [
-      'Supporting end-to-end talent acquisition processes',
-      'Sourcing and screening candidates across technical and non-technical roles',
-      'Coordinating interviews and maintaining candidate pipelines',
+      'Designing and building automation workflows using AI tools to streamline internal processes',
+      'Integrating AI agents and scripts to reduce manual, repetitive operational work',
+      'Collaborating across teams to identify automation opportunities and ship reliable systems',
+    ],
+  },
+  {
+    role: 'Talent Acquisition Intern',
+    company: 'Netconnect Global (NCG)',
+    duration: 'May 2026 – Jul 2026',
+    tag: 'Internship',
+    details: [
+      'Supported end-to-end talent acquisition processes',
+      'Sourced and screened candidates across technical and non-technical roles',
+      'Coordinated interviews and maintained candidate pipelines',
     ],
   },
   {

@@ -28,9 +28,16 @@ const BELIEFS = [
     title: "Why HR? I genuinely don't know - and that's the point.",
     desc: 'I never chose HR to tick a box. Something about connecting people to opportunity, about seeing someone get a role that changes their life - that just moves me. No logic. Pure pull.',
   },
+  {
+    icon: '🤖',
+    title: 'Automation is empathy at scale',
+    desc: "Now building as an AI Automation Engineer at Netconnect Global (NCG), I bring the same tech + people instinct to the work - every workflow I automate frees up time for the human work that actually matters.",
+  },
 ]
 
 const LEARNING = [
+  'AI Agents & Automation',
+  'Workflow Tools (n8n / Zapier)',
   'HR Analytics & Dashboards',
   'ATS Optimization',
   'Employer Branding Strategy',

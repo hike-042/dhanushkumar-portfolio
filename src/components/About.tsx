@@ -14,6 +14,7 @@ const PILLARS = [
   { icon: '💻', name: 'Tech-Literate', desc: 'Understands JDs, tech stacks, and what engineering teams actually need' },
   { icon: '🎤', name: 'Communicator', desc: 'Public speaker, confident in rooms from campus to boardroom' },
   { icon: '⚙️', name: 'Process-Driven', desc: 'Brings structure: SOPs, tracking, quality management thinking' },
+  { icon: '🤖', name: 'Automation', desc: 'Designs AI-driven workflows and automation pipelines that cut out repetitive work' },
 ]
 
 const SKILLS = [
@@ -40,6 +41,15 @@ const SKILLS = [
       { name: 'Public Speaking', level: 88 },
       { name: 'Corporate Relations', level: 85 },
       { name: 'Team Leadership', level: 80 },
+    ],
+  },
+  {
+    group: 'Automation & AI',
+    items: [
+      { name: 'Workflow Automation', level: 85 },
+      { name: 'AI Tool Integration', level: 88 },
+      { name: 'Python Scripting', level: 80 },
+      { name: 'Process Automation (RPA)', level: 78 },
     ],
   },
 ]
@@ -73,7 +83,7 @@ export default function About() {
         className="font-fraunces"
         style={{ fontSize: 'clamp(1.8rem, 4vw, 2.6rem)', fontWeight: 400, lineHeight: 1.1, letterSpacing: '-.02em', marginBottom: 28 }}
       >
-        <TextScramble text="The recruiter who speaks engineering." triggerOnHover delay={200} duration={1000} />
+        <TextScramble text="The automation engineer who still speaks HR." triggerOnHover delay={200} duration={1000} />
       </h2>
 
       <TextReveal delay={0.12}>
@@ -89,18 +99,22 @@ export default function About() {
         >
           <p style={{ fontSize: '.88rem', fontWeight: 400, color: 'var(--text)', lineHeight: 1.75 }}>
             <strong style={{ color: 'var(--accent)' }}>The rare combination:</strong>{' '}
-            Most HR professionals can&apos;t read a system design document. Most engineers don&apos;t want to write JDs. I sit in between, with a BE in Computer Science and an MBA in HR, so I understand both worlds deeply. This makes me significantly more effective at sourcing, screening, and closing technical talent.
+            Most automation engineers have never sat in a hiring conversation. Most HR professionals can&apos;t read a system design document. I sit in between, with a BE in Computer Science and an MBA in HR, so I understand both worlds deeply. I put that instinct to work daily, building automation systems at my job, and using AI coding tools to design and build things myself, including this very portfolio.
           </p>
         </div>
       </TextReveal>
 
       <TextReveal delay={0.16}>
         <p style={{ fontSize: '1rem', fontWeight: 300, color: 'var(--text-2)', lineHeight: 1.8, maxWidth: 560, marginBottom: 40 }}>
-          Currently completing a mandatory internship at{' '}
+          Currently working as an <strong style={{ color: 'var(--text)', fontWeight: 500 }}>AI Automation Engineer</strong> at{' '}
+          <a href="https://netconnectglobal.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text)', fontWeight: 500, textDecoration: 'underline', textDecorationColor: 'var(--line)', textUnderlineOffset: '3px' }}>
+            Netconnect Global (NCG)
+          </a>
+          , building automation workflows and AI-driven systems. I completed my internship at{' '}
           <a href="https://4gd.ai" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text)', fontWeight: 500, textDecoration: 'underline', textDecorationColor: 'var(--line)', textUnderlineOffset: '3px' }}>
             4Good.AI
           </a>{' '}
-          as Quality &amp; Inventory Coordinator, where I&apos;m building operational systems from scratch. Previously worked in corporate relations and placement at{' '}
+          as a Project Management Intern, and before that worked in corporate relations and placement at{' '}
           <a href="https://pes.edu" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text)', fontWeight: 500, textDecoration: 'underline', textDecorationColor: 'var(--line)', textUnderlineOffset: '3px' }}>
             PES University
           </a>
@@ -153,7 +167,7 @@ export default function About() {
         whileInView="show"
         viewport={{ once: false, margin: '-40px' }}
         className="skills-grid-responsive"
-        style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 14 }}
+        style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 14 }}
       >
         {SKILLS.map(s => (
           <motion.div
@@ -281,8 +295,9 @@ export default function About() {
         style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 48 }}
       >
         {[
+          'Automation Tools', 'Python', 'AI Tools', 'n8n / Zapier',
           'LinkedIn Recruiter', 'Boolean Search', 'ATS Systems',
-          'MS Excel', 'Google Workspace', 'AI Tools', 'Canva',
+          'MS Excel', 'Google Workspace', 'Canva',
           'Applicant Tracking', 'JD Writing', 'Interview Coordination',
         ].map((tool, i) => (
           <motion.span
@@ -296,8 +311,8 @@ export default function About() {
               borderRadius: 20,
               background: 'var(--bg-card)',
               border: '1px solid var(--line)',
-              color: i < 3 ? 'var(--accent)' : 'var(--text-2)',
-              borderColor: i < 3 ? 'rgba(var(--accent-rgb), 0.35)' : 'var(--line)',
+              color: i < 4 ? 'var(--accent)' : 'var(--text-2)',
+              borderColor: i < 4 ? 'rgba(var(--accent-rgb), 0.35)' : 'var(--line)',
               cursor: 'default',
             }}
           >
@@ -320,22 +335,22 @@ export default function About() {
             title: 'What I bring',
             accent: true,
             items: [
-              'Tech fluency - reads JDs like an engineer',
-              'Sourcing that goes beyond LinkedIn',
-              'Structured hiring ops & documentation',
-              'Campus network across PES University',
-              'Genuine care for candidate experience',
+              'Automation-first mindset - scripts & AI agents over manual work',
+              'Tech fluency - reads specs and JDs like an engineer',
+              'Python & AI tool integration for real workflows',
+              'Structured ops thinking & clear documentation',
+              'Genuine care for people, not just process',
             ],
           },
           {
             title: "What I'm looking for",
             accent: false,
             items: [
-              'A team where HR has a seat at the table',
-              'Technical hiring or campus recruitment focus',
-              'Space to build, not just execute',
-              'Mentorship from seasoned TA professionals',
-              'Culture that values people over process',
+              'Space to build and ship automation systems end-to-end',
+              'Teams that value tech and people thinking together',
+              'Room to keep learning AI agents & workflow tools',
+              'Mentorship from experienced automation & AI engineers',
+              'Culture that values impact over busywork',
             ],
           },
         ].map(col => (

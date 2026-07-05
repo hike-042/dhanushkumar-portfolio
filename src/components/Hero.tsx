@@ -10,8 +10,10 @@ import useDeviceProfile from './ui/use-device-profile'
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1]
 
 const ROLES = [
-  'Talent Acquisition Specialist',
-  'Campus Recruiter',
+  'AI Automation Engineer',
+  'Data Management',
+  'Data Analyst',
+  'AI-Assisted Builder',
   'Problem Solver',
   'Tech + HR Bridge Builder',
 ]
@@ -166,7 +168,7 @@ export default function Hero() {
           <motion.div variants={block} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '7px 16px', background: 'rgba(var(--accent-rgb), 0.12)', border: '1px solid rgba(var(--accent-rgb), 0.28)', borderRadius: 20, marginBottom: 30 }}>
             <span style={{ width: 7, height: 7, borderRadius: '50%', background: 'var(--accent)', display: 'inline-block', flexShrink: 0 }} />
             <span style={{ fontSize: '.82rem', color: 'var(--accent)', fontWeight: 500, letterSpacing: '.05em', textTransform: 'uppercase' }}>
-              Talent Acquisition &amp; HR · Open to Opportunities
+              AI Automation Engineer · Netconnect Global (NCG)
             </span>
           </motion.div>
 

@@ -3,10 +3,10 @@
 import { useState } from 'react'
 
 const ITEMS = [
-  'Talent Acquisition', 'Technical Recruiting', 'Campus Hiring', 'JD Analysis',
-  'Stakeholder Management', 'Employer Branding', 'Process Design', 'Team Leadership',
-  'Public Speaking', 'Corporate Relations', 'Team Leadership',
-  'Quality Management', 'Python', 'NLP', 'Machine Learning',
+  'AI Automation', 'Workflow Automation', 'AI Agents', 'Python',
+  'Process Automation (RPA)', 'Machine Learning', 'NLP', 'n8n / Zapier',
+  'Talent Acquisition', 'JD Analysis', 'Stakeholder Management',
+  'Quality Management', 'Team Leadership', 'Public Speaking', 'Corporate Relations',
 ]
 
 const SEP = '·'
