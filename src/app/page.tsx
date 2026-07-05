@@ -57,7 +57,7 @@ export default function Home() {
           <div style={{ display: 'flex', alignItems: 'center', gap: 7 }}>
             <span className="status-dot" />
             <span style={{ fontSize: '.75rem', color: 'var(--text-3)', fontWeight: 300 }}>
-              Open to TA &amp; HR opportunities
+              Open to AI Automation &amp; Engineering opportunities
             </span>
           </div>
         </div>

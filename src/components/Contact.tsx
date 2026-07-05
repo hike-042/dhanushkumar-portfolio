@@ -163,7 +163,7 @@ export default function Contact() {
 
         <TextReveal delay={0.2}>
           <p style={{ color: 'var(--text-2)', marginBottom: 40, fontSize: '.95rem' }}>
-            Open to opportunities in Talent Acquisition.
+            Open to opportunities in AI Automation &amp; Engineering.
           </p>
         </TextReveal>
 
