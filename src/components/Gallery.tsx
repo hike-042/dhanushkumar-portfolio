@@ -11,6 +11,7 @@ const photos = [
   '/gallery/photo5.jpg',
   '/gallery/photo6.jpg',
   '/gallery/photo7.jpeg',
+  '/gallery/photo8.jpg',
 ]
 
 const items = [...photos, ...photos]
