@@ -876,7 +876,23 @@ body {
   width: 260px;
   height: 320px;
   flex-shrink: 0;
-  transition: filter 0.4s;
+  transition: filter 0.4s, width 0.4s cubic-bezier(.22, 1, .36, 1);
+}
+/* Hover: show the whole photo. --full is the width the photo needs at 320px tall
+   (set from the image's real aspect ratio in Gallery.tsx). Wide photos grow to it;
+   tall photos keep 260px and switch to contain so nothing is cropped. */
+@media (hover: hover) and (min-width: 768px) {
+  .gallery-slider .list .item:hover {
+    width: max(260px, var(--full, 260px));
+    z-index: 2;
+  }
+  .gallery-slider .list .item.is-tall:hover {
+    background: var(--bg-card);
+    border-radius: 10px;
+  }
+  .gallery-slider .list .item.is-tall:hover img {
+    object-fit: contain;
+  }
 }
 .gallery-slider .list .item img {
   width: 100%;
@@ -900,5 +916,4 @@ body {
 }
 .gallery-slider .list .item:hover img {
   filter: grayscale(0);
-  transform: scale(1.05);
 }
