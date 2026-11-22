@@ -56,7 +56,7 @@
 
 html {
   overscroll-behavior: none;
-  overflow-x: hidden;
+  overflow-x: clip;
   background: var(--bg);
 }
 
@@ -66,7 +66,7 @@ body {
   background: var(--bg);
   color: var(--text);
   transition: background 0.3s var(--ease), color 0.3s var(--ease);
-  overflow-x: hidden;
+  overflow-x: clip;
   overscroll-behavior: none;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
